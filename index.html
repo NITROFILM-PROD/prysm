@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>PRYSM — Enterprise AI Content</title>
+<title>PRYSM â€” Enterprise AI Content</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 
 <style>
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESET & VARIABLES
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
@@ -49,9 +49,9 @@ body{
 a{color:inherit;text-decoration:none;cursor:none}
 img{display:block}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CURSOR
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #cd,#cr{
   position:fixed;z-index:9999;pointer-events:none;
   transform:translate(-50%,-50%);
@@ -69,9 +69,9 @@ img{display:block}
 body.hov #cd{width:5px;height:5px}
 body.hov #cr{width:54px;height:54px;border-color:rgba(255,255,255,.65)}
 
-/* ═══════════════════════════════
-   FIXED BACKGROUND — WebGL shader
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FIXED BACKGROUND â€” WebGL shader
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #bg{
   position:fixed;inset:0;z-index:0;overflow:hidden;
 }
@@ -94,9 +94,9 @@ body.hov #cr{width:54px;height:54px;border-color:rgba(255,255,255,.65)}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    NAV
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 nav{
   position:fixed;top:1.6rem;left:2rem;right:2rem;
   z-index:100;
@@ -113,7 +113,7 @@ nav{
   font-family:var(--df);font-size:1.25rem;letter-spacing:.14em;color:#fff;
 }
 
-/* ── Hamburger button ── */
+/* â”€â”€ Hamburger button â”€â”€ */
 #menu-btn{
   background:none;border:none;cursor:none;
   padding:.45rem .2rem;
@@ -131,14 +131,14 @@ body.menu-open #menu-btn span:nth-child(1){transform:translateY(6.5px) rotate(45
 body.menu-open #menu-btn span:nth-child(2){opacity:0;width:0}
 body.menu-open #menu-btn span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);width:22px}
 
-/* ── Menu scrim — transparent, just catches outside clicks ── */
+/* â”€â”€ Menu scrim â€” transparent, just catches outside clicks â”€â”€ */
 #menu-scrim{
   position:fixed;inset:0;z-index:98;
   pointer-events:none;
 }
 body.menu-open #menu-scrim{ pointer-events:all; }
 
-/* ── Dropdown popup — top-right, same glass as nav ── */
+/* â”€â”€ Dropdown popup â€” top-right, same glass as nav â”€â”€ */
 #menu-overlay{
   position:fixed;
   top:5rem;          /* just below the nav bar */
@@ -184,18 +184,18 @@ body.menu-open #menu-overlay{
 }
 .menu-link:hover .ml-num{ color:var(--cyan); }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PROGRESS LINE
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #progress{
   position:fixed;top:0;left:0;z-index:200;
   height:1px;width:0%;background:rgba(255,255,255,.35);
   will-change:width;
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    BOTTOM SCROLL CUE
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #cue{
   position:fixed;bottom:2.4rem;left:50%;transform:translateX(-50%);z-index:101;
   display:flex;flex-direction:column;align-items:center;gap:.7rem;
@@ -232,9 +232,9 @@ body.menu-open #menu-overlay{
   to{opacity:.8;transform:rotate(45deg) translateY(3px)}
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CONTENT
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #content{
   position:relative;z-index:10;
 }
@@ -256,9 +256,9 @@ body.menu-open #menu-overlay{
   line-height:.87;letter-spacing:.01em;
 }
 
-/* ═══════════════════════════════
-   FLOW SECTION — sticky viewport
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FLOW SECTION â€” sticky viewport
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #flow-section{
   position:relative;
   height:200vh;
@@ -270,9 +270,9 @@ body.menu-open #menu-overlay{
   overflow:hidden;
 }
 
-/* ═══════════════════════════════
-   SPLASH — layer inside sticky
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SPLASH â€” layer inside sticky
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #splash{
   position:absolute;
   inset:0;
@@ -291,9 +291,9 @@ body.menu-open #menu-overlay{
   will-change:transform,opacity,filter;
 }
 
-/* ═══════════════════════════════
-   SECTION 0 — HERO layer
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 0 â€” HERO layer
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s0{
   position:absolute;
   inset:0;
@@ -318,7 +318,7 @@ body.menu-open #menu-overlay{
   font-size:.82rem;color:rgba(255,255,255,.46);line-height:1.9;max-width:300px;
 }
 
-/* ─── HERO VIDEO ─── */
+/* â”€â”€â”€ HERO VIDEO â”€â”€â”€ */
 #hero-vid-wrap{
   position:absolute;
   top:0;bottom:0;left:38%;right:0;
@@ -339,7 +339,7 @@ body.menu-open #menu-overlay{
 #hero-left-fade{ display:none; }
 #hero-text-glow{ display:none; }
 
-/* ── Hero CTA — neon-button style (gray), pill shape ── */
+/* â”€â”€ Hero CTA â€” neon-button style (gray), pill shape â”€â”€ */
 .hero-cta{
   position:absolute;
   bottom:3.5rem; right:3.5rem;
@@ -367,7 +367,7 @@ body.menu-open #menu-overlay{
   border-color:rgba(200,200,200,.32);
   background:rgba(150,150,150,.0);
 }
-/* top neon line — appears on hover */
+/* top neon line â€” appears on hover */
 .hero-cta .neon-t{
   position:absolute;
   top:0; left:0; right:0;
@@ -380,7 +380,7 @@ body.menu-open #menu-overlay{
   transition:opacity .5s ease-in-out;
 }
 .hero-cta:hover .neon-t{ opacity:1; }
-/* bottom neon line — always dimly visible, brightens on hover */
+/* bottom neon line â€” always dimly visible, brightens on hover */
 .hero-cta .neon-b{
   position:absolute;
   bottom:-1px; left:0; right:0;
@@ -401,9 +401,9 @@ body.menu-open #menu-overlay{
 .hero-text-wrap .hero-sub{text-shadow:none}
 
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MARQUEE
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .marquee-wrap{
   border-top:1px solid rgba(255,255,255,.08);
   border-bottom:1px solid rgba(255,255,255,.08);
@@ -423,9 +423,9 @@ body.menu-open #menu-overlay{
 .md{color:rgba(255,255,255,.12);padding:0 .15rem}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ═══════════════════════════════
-   SECTION 2 — WHAT WE BUILD (editorial checkerboard)
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 2 â€” WHAT WE BUILD (editorial checkerboard)
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s2{ padding:7rem 0 0; }
 
 .wb-header{ padding:0 5.5rem; }
@@ -436,7 +436,7 @@ body.menu-open #menu-overlay{
   gap:7rem;
   padding:5rem 5.5rem;
   border-top:1px solid rgba(255,255,255,.07);
-  height:520px;               /* fixed — all rows identical height  */
+  height:520px;               /* fixed â€” all rows identical height  */
   box-sizing:border-box;
   overflow:hidden;            /* nothing bleeds past the border line */
 }
@@ -445,7 +445,7 @@ body.menu-open #menu-overlay{
 }
 .wb-row.rev{ flex-direction:row-reverse; }
 
-/* text column — centred vertically within the stretched row */
+/* text column â€” centred vertically within the stretched row */
 .wb-text{
   flex:0 0 32%;
   min-width:0;
@@ -494,8 +494,8 @@ body.menu-open #menu-overlay{
 }
 .wb-link:hover{ color:rgba(255,255,255,.75); border-color:rgba(255,255,255,.28); }
 
-/* ── Collage — editorial grid (1 large + 2 stacked) ──
-   No fixed height — collage stretches to match the row height
+/* â”€â”€ Collage â€” editorial grid (1 large + 2 stacked) â”€â”€
+   No fixed height â€” collage stretches to match the row height
    so images always stay within the section's border lines.    */
 .wb-collage{
   flex:1;
@@ -504,7 +504,7 @@ body.menu-open #menu-overlay{
   grid-template-rows: 3fr 2fr;
   gap:5px;
   min-width:0;
-  /* height: auto — driven by align-items:stretch on .wb-row */
+  /* height: auto â€” driven by align-items:stretch on .wb-row */
 }
 .wb-collage img{
   width:100%; height:100%;
@@ -512,22 +512,22 @@ body.menu-open #menu-overlay{
   display:block;
   position:static; /* grid, not absolute */
 }
-/* dominant — left column, full height */
+/* dominant â€” left column, full height */
 .wb-img-a{ grid-column:1; grid-row:1/3; }
-/* top-right — larger of the two side images */
+/* top-right â€” larger of the two side images */
 .wb-img-b{ grid-column:2; grid-row:1; }
-/* bottom-right — slightly shorter, creates visual weight variation */
+/* bottom-right â€” slightly shorter, creates visual weight variation */
 .wb-img-c{ grid-column:2; grid-row:2; }
 
-/* reversed rows — dominant image moves to right column */
+/* reversed rows â€” dominant image moves to right column */
 .wb-row.rev .wb-collage{ grid-template-columns:36fr 62fr; }
 .wb-row.rev .wb-img-a{ grid-column:2; grid-row:1/3; }
 .wb-row.rev .wb-img-b{ grid-column:1; grid-row:1; }
 .wb-row.rev .wb-img-c{ grid-column:1; grid-row:2; }
 
-/* ═══════════════════════════════
-   SECTION 3 — CAROUSEL
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 3 â€” CAROUSEL
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s3{
   padding:9rem 0 7rem;
   text-align:center;
@@ -647,9 +647,9 @@ body.menu-open #menu-overlay{
 }
 .cdot.on{width:22px;border-radius:2px;background:rgba(255,255,255,.75)}
 
-/* ═══════════════════════════════
-   SECTION 4 — GOOEY STATS
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 4 â€” GOOEY STATS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s4{
   padding:9rem 3rem;
   display:flex;
@@ -757,9 +757,9 @@ body.menu-open #menu-overlay{
   .gooey-t1,.gooey-t2{ font-size:clamp(5rem,18vw,8rem); }
 }
 
-/* ═══════════════════════════════
-   SECTION 5 — PROCESS
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 5 â€” PROCESS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s5{padding:8rem 3rem}
 .steps{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -776,9 +776,9 @@ body.menu-open #menu-overlay{
 .step-t{font-family:var(--df);font-size:1.55rem;margin-bottom:.6rem}
 .step-d{font-size:.7rem;color:rgba(255,255,255,.38);line-height:1.88}
 
-/* ═══════════════════════════════
-   SECTION 6 — ABOUT
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 6 â€” ABOUT
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s6{
   padding:10rem 3rem;
   display:grid;grid-template-columns:1fr 1fr;
@@ -797,9 +797,9 @@ body.menu-open #menu-overlay{
 }
 .about-cta:hover{gap:1.2rem;border-color:#fff}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    LOGO CLOUD
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .logo-cloud{
   position:relative;
   padding:2.5rem 0 2rem;
@@ -839,7 +839,7 @@ body.menu-open #menu-overlay{
   display:flex;
   align-items:center;
   width:max-content;
-  /* no gap — spacing goes on each item so translateX(-50%)
+  /* no gap â€” spacing goes on each item so translateX(-50%)
      lands exactly at the start of the duplicate set          */
   animation:logo-slide 42s linear infinite;
   will-change:transform;
@@ -889,9 +889,9 @@ body.menu-open #menu-overlay{
   background:linear-gradient(to left, rgba(14,14,14,.95) 0%, transparent 100%);
 }
 
-/* ═══════════════════════════════
-   SECTION 7 — CONTACT
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION 7 â€” CONTACT
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s7{
   padding:10rem 3rem 8rem;
   display:flex;flex-direction:column;align-items:center;text-align:center;
@@ -917,9 +917,9 @@ body.menu-open #menu-overlay{
 }
 .sbtn:hover{background:transparent;color:#fff}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FOOTER
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 footer{
   position:relative;z-index:10;
   border-top:1px solid rgba(255,255,255,.07);
@@ -931,9 +931,9 @@ footer{
 .fl{font-family:var(--df);font-size:.9rem;letter-spacing:.1em}
 .fc{font-size:.58rem;color:rgba(255,255,255,.25);letter-spacing:.08em}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SIDE DOTS
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #side-dots{
   position:fixed;right:2.4rem;top:50%;transform:translateY(-50%);
   z-index:100;display:flex;flex-direction:column;gap:.55rem;align-items:center;
@@ -946,9 +946,9 @@ footer{
 }
 .sdot.on{background:rgba(255,255,255,.8);height:14px;border-radius:2px}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MOBILE
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media(max-width:768px){
   nav{padding:1.2rem 1.5rem}
   .nav-link:not(:last-child){display:none}
@@ -969,9 +969,9 @@ footer{
   body{cursor:auto}
   a,button{cursor:pointer}
 }
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PRISM FLUX LOADER
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .prism-loader{
   display:none;
   flex-direction:column;align-items:center;justify-content:center;gap:16px;
@@ -997,9 +997,9 @@ footer{
   color:rgba(255,255,255,.7);letter-spacing:.18em;text-transform:uppercase;
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    NAV CTA BUTTON
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .nav-cta-btn{
   font-family:var(--df);
   font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;
@@ -1011,9 +1011,9 @@ footer{
 }
 .nav-cta-btn:hover{background:rgba(255,255,255,.88);transform:scale(1.04)}
 
-/* ═══════════════════════════════
-   TRUST STRIP — hero
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TRUST STRIP â€” hero
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .trust-strip{
   display:flex;align-items:center;gap:1.4rem;
   margin-top:1.25rem;flex-wrap:wrap;
@@ -1028,9 +1028,9 @@ footer{
   background:rgba(255,255,255,.25);flex-shrink:0;
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TESTIMONIALS
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s-testi{padding:9rem 3rem;border-top:1px solid rgba(255,255,255,.06)}
 #s-testi .big{margin-bottom:4rem}
 .testi-grid{
@@ -1059,9 +1059,9 @@ footer{
   padding:.3rem .75rem;margin-top:.7rem;align-self:flex-start;
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FAQ
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s-faq{padding:8rem 3rem;border-top:1px solid rgba(255,255,255,.06)}
 #s-faq .big{margin-bottom:3rem}
 .faq-list{max-width:780px}
@@ -1088,9 +1088,9 @@ footer{
 }
 .faq-item.open .faq-a{max-height:220px;padding-bottom:1.6rem}
 
-/* ═══════════════════════════════
-   URGENCY BADGE — contact
-═══════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   URGENCY BADGE â€” contact
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .urgency-badge{
   display:inline-flex;align-items:center;gap:.6rem;
   font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
@@ -1116,7 +1116,7 @@ footer{
   font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;
   color:rgba(255,255,255,.25);display:flex;align-items:center;gap:.4rem;
 }
-.ct-item::before{content:'✓';color:rgba(255,255,255,.4)}
+.ct-item::before{content:'âœ“';color:rgba(255,255,255,.4)}
 
 /* CALENDLY LINK */
 .cal-link{
@@ -1128,9 +1128,9 @@ footer{
 }
 .cal-link:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.4)}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    STICKY MOBILE CTA
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .sticky-mobile-cta{
   display:none;
   position:fixed;bottom:0;left:0;right:0;z-index:500;
@@ -1153,10 +1153,10 @@ footer{
   .trust-strip{gap:.8rem}
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INTER WEIGHT & TRACKING FIXES
    (replaces Bebas Neue defaults)
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .big{font-weight:800;letter-spacing:-.035em}
 #s0 .big{font-size:clamp(3.8rem,7.5vw,9.5rem);font-weight:800;letter-spacing:-.04em}
 .splash-logo{font-weight:800;letter-spacing:-.02em}
@@ -1178,9 +1178,9 @@ footer{
 .lc-title{font-weight:700;letter-spacing:.03em}
 .step-n{font-weight:800}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CYAN ACCENT SYSTEM
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 /* progress + indicators */
 #progress{background:var(--cyan)}
 .sdot.on{background:var(--cyan);box-shadow:0 0 6px var(--cyan-glow)}
@@ -1191,7 +1191,7 @@ footer{
 /* nav */
 .nav-link:hover{color:var(--cyan)}
 
-/* hero CTA — cyan border glow */
+/* hero CTA â€” cyan border glow */
 .hero-cta{border-color:rgba(34,211,238,.25);background:rgba(34,211,238,.04)}
 .hero-cta:hover{border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.06);color:#fff}
 .hero-cta .neon-t{background:linear-gradient(to right,transparent,rgba(34,211,238,.8),transparent)}
@@ -1221,9 +1221,9 @@ footer{
 /* submit button hover ring */
 .sbtn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    STATS BAR (replaces logo cloud)
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .stats-bar{
   display:flex;align-items:stretch;
   border-top:1px solid rgba(255,255,255,.07);
@@ -1256,9 +1256,9 @@ footer{
   .sb-item:nth-child(4){border-right:none;border-bottom:none}
 }
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    HERO INLINE CTA
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .hero-inline-cta{
   display:inline-flex;align-items:center;gap:.7rem;
   margin-top:2rem;
@@ -1272,9 +1272,9 @@ footer{
 }
 .hero-inline-cta:hover{background:rgba(34,211,238,.85);transform:translateX(5px)}
 
-/* ═══════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PRICING SECTION
-═══════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #s-pricing{
   padding:9rem 3rem;
   border-top:1px solid rgba(255,255,255,.06);
@@ -1382,18 +1382,18 @@ footer{
   .ci{min-width:45%;border-left:none;padding-left:0}
 }
 
-/* ═══════════════════════════════════════════════════
-   DESKTOP FIT  —  1280 × 800 calibration
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   DESKTOP FIT  â€”  1280 Ã— 800 calibration
    All content-section headings, paddings & rows scaled
    to breathe without overwhelming the screen.
    Hero (#s0) keeps its giant override via #s0 .big.
-══════════════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Section headings: calibrated for Inter 800 ─────
+/* â”€â”€ Section headings: calibrated for Inter 800 â”€â”€â”€â”€â”€
    #s0 .big and #s7 .big override below */
 .big{ font-size:clamp(2.6rem,5.5vw,7.2rem); }
 
-/* ── Section vertical padding — generous air ─────── */
+/* â”€â”€ Section vertical padding â€” generous air â”€â”€â”€â”€â”€â”€â”€ */
 #s2       { padding:8rem 0 0; }
 #s3       { padding:8rem 0 6rem; }
 #s-testi  { padding:9rem 3rem; border-top:1px solid rgba(255,255,255,.06); }
@@ -1403,7 +1403,7 @@ footer{
 #s-faq    { padding:9rem 3rem; }
 #s6       { padding:10rem 3rem; }
 
-/* ── Heading bottom margins ─────────────────────── */
+/* â”€â”€ Heading bottom margins â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #s3 .big     { margin-bottom:3rem; }
 #s4 .big     { margin-bottom:3rem; }
 #s5 .big     { margin-bottom:3rem; }
@@ -1418,17 +1418,17 @@ footer{
 .pricing-intro{ margin-bottom:3rem; }
 #s-pricing .ey{ margin-bottom:.8rem; }
 
-/* ── Services checkerboard rows ─────────────────── */
+/* â”€â”€ Services checkerboard rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .wb-row{ height:375px; padding:3.5rem 5rem; }
 .wb-heading{ font-size:clamp(3rem,4.2vw,5.5rem); }
 .wb-desc{ font-size:.7rem; line-height:2.0; margin-bottom:2.2rem; }
 #s2 .wb-header.big{ font-size:clamp(2.2rem,4.5vw,6rem); margin-bottom:2.5rem; }
 
-/* ── Carousel ────────────────────────────────────── */
+/* â”€â”€ Carousel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .carousel-outer{ height:calc(62vw / (16/9) + 4rem); max-height:calc(720px / (16/9) + 4rem); }
 .reel-card{ width:62vw; max-width:720px; }
 
-/* ── Gooey stats ─────────────────────────────────── */
+/* â”€â”€ Gooey stats â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .s4-body{ gap:4rem; }
 .gooey-wrap{ height:clamp(8rem,13vw,16rem); }
 .gooey-t1,.gooey-t2{ font-size:clamp(4rem,9vw,11rem); }
@@ -1437,22 +1437,22 @@ footer{
 .adv-desc{ font-size:.72rem; line-height:1.88; }
 .s4-right{ padding-left:2rem; }
 
-/* ── Process steps ──────────────────────────────── */
+/* â”€â”€ Process steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .step{ padding:2.25rem 2rem 2.5rem; }
 .step-n{ font-size:3rem; margin-bottom:1.4rem; }
 
-/* ── Pricing cards ──────────────────────────────── */
+/* â”€â”€ Pricing cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .p-card{ padding:2.5rem 2.5rem; gap:1.5rem; }
 .p-price{ font-size:clamp(1.8rem,2.8vw,2.6rem); }
 .compare-bar{ margin-top:3rem; padding-top:3rem; }
 
-/* ── Testimonials cards ─────────────────────────── */
+/* â”€â”€ Testimonials cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .testi-card{ padding:2.5rem 2.25rem; gap:2rem; }
 
-/* ── FAQ items ──────────────────────────────────── */
+/* â”€â”€ FAQ items â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .faq-q{ font-size:1.12rem; padding:1.7rem 0; }
 
-/* ── Contact / S7 ───────────────────────────────── */
+/* â”€â”€ Contact / S7 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #s7{ padding:9rem 3rem 10rem; }
 #s7 .big{
   font-size:clamp(2.2rem,3.5vw,4.8rem);
@@ -1460,7 +1460,7 @@ footer{
   line-height:.9;
 }
 
-/* ── Mobile overrides ───────────────────────────── */
+/* â”€â”€ Mobile overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media(max-width:768px){
   .wb-row{ height:auto; padding:3rem 1.5rem; }
   .gooey-wrap{ height:clamp(6rem,20vw,9rem); }
@@ -1482,7 +1482,7 @@ footer{
 <!-- progress -->
 <div id="progress"></div>
 
-<!-- fixed bg — WebGL shader -->
+<!-- fixed bg â€” WebGL shader -->
 <div id="bg">
   <canvas id="shader-canvas"></canvas>
   <div id="bg-overlay"></div>
@@ -1545,12 +1545,12 @@ footer{
   <section id="s0">
     <div id="s0-inner">
       <div id="hero-vid-wrap">
-        <video id="hero-vid-a" class="hero-vid" muted playsinline autoplay loop preload="auto" src="/DEMOFORWEBSITE.mp4"></video>
+        <video id="hero-vid-a" class="hero-vid" muted playsinline autoplay loop preload="auto" src="DEMOFORWEBSITE.mp4"></video>
         <div id="hero-vid-blur"></div>
       </div>
       <div id="hero-left-fade"></div>
       <div id="hero-text-glow"></div>
-      <a class="hero-cta" href="#s3"><span class="neon-t"></span>See Our Work ↓<span class="neon-b"></span></a>
+      <a class="hero-cta" href="#s3"><span class="neon-t"></span>See Our Work â†“<span class="neon-b"></span></a>
       <div class="hero-text-wrap">
         <div class="ey rf">Enterprise AI Content Studio</div>
         <div class="big">
@@ -1558,13 +1558,13 @@ footer{
           <div class="rl"><span>WITHOUT</span></div>
           <div class="rl"><span>LIMITS.</span></div>
         </div>
-        <p class="hero-sub rf">Premium AI-powered content for enterprise brands — every format, unlimited revisions, 7-day delivery. Built for teams that move fast and demand quality.</p>
+        <p class="hero-sub rf">Premium AI-powered content for enterprise brands â€” every format, unlimited revisions, 7-day delivery. Built for teams that move fast and demand quality.</p>
         <div class="trust-strip rf">
           <span class="trust-pill">Reply within 2 hours</span>
           <span class="trust-pill">7-day delivery guaranteed</span>
           <span class="trust-pill">Unlimited revisions</span>
         </div>
-        <a class="hero-inline-cta rf" href="#s7">Get a Free Scope Call →</a>
+        <a class="hero-inline-cta rf" href="#s7">Get a Free Scope Call â†’</a>
       </div>
     </div>
   </section>
@@ -1572,7 +1572,7 @@ footer{
   </div><!-- /flow-sticky -->
   </div><!-- /flow-section -->
 
-  <!-- STATS BAR — proof points -->
+  <!-- STATS BAR â€” proof points -->
   <div class="stats-bar">
     <div class="sb-item">
       <span class="sb-num">7</span>
@@ -1583,8 +1583,8 @@ footer{
       <span class="sb-label">Formats Per Project Included</span>
     </div>
     <div class="sb-item">
-      <span class="sb-num">∞</span>
-      <span class="sb-label">Revision Rounds — Always Included</span>
+      <span class="sb-num">âˆž</span>
+      <span class="sb-label">Revision Rounds â€” Always Included</span>
     </div>
     <div class="sb-item">
       <span class="sb-num">2H</span>
@@ -1595,40 +1595,40 @@ footer{
   <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span class="mi">Brand Campaigns<span class="md">·</span></span>
-      <span class="mi">AI Spokespersons<span class="md">·</span></span>
-      <span class="mi">Social Content<span class="md">·</span></span>
-      <span class="mi">Product Videos<span class="md">·</span></span>
-      <span class="mi">Multilingual Localization<span class="md">·</span></span>
-      <span class="mi">Motion Graphics<span class="md">·</span></span>
-      <span class="mi">Event Coverage<span class="md">·</span></span>
-      <span class="mi">Reels &amp; Shorts<span class="md">·</span></span>
-      <span class="mi">Brand Campaigns<span class="md">·</span></span>
-      <span class="mi">AI Spokespersons<span class="md">·</span></span>
-      <span class="mi">Social Content<span class="md">·</span></span>
-      <span class="mi">Product Videos<span class="md">·</span></span>
-      <span class="mi">Multilingual Localization<span class="md">·</span></span>
-      <span class="mi">Motion Graphics<span class="md">·</span></span>
-      <span class="mi">Event Coverage<span class="md">·</span></span>
-      <span class="mi">Reels &amp; Shorts<span class="md">·</span></span>
+      <span class="mi">Brand Campaigns<span class="md">Â·</span></span>
+      <span class="mi">AI Spokespersons<span class="md">Â·</span></span>
+      <span class="mi">Social Content<span class="md">Â·</span></span>
+      <span class="mi">Product Videos<span class="md">Â·</span></span>
+      <span class="mi">Multilingual Localization<span class="md">Â·</span></span>
+      <span class="mi">Motion Graphics<span class="md">Â·</span></span>
+      <span class="mi">Event Coverage<span class="md">Â·</span></span>
+      <span class="mi">Reels &amp; Shorts<span class="md">Â·</span></span>
+      <span class="mi">Brand Campaigns<span class="md">Â·</span></span>
+      <span class="mi">AI Spokespersons<span class="md">Â·</span></span>
+      <span class="mi">Social Content<span class="md">Â·</span></span>
+      <span class="mi">Product Videos<span class="md">Â·</span></span>
+      <span class="mi">Multilingual Localization<span class="md">Â·</span></span>
+      <span class="mi">Motion Graphics<span class="md">Â·</span></span>
+      <span class="mi">Event Coverage<span class="md">Â·</span></span>
+      <span class="mi">Reels &amp; Shorts<span class="md">Â·</span></span>
     </div>
   </div>
 
 
-  <!-- S2 WHAT WE BUILD — editorial checkerboard -->
+  <!-- S2 WHAT WE BUILD â€” editorial checkerboard -->
   <section id="s2">
     <div class="wb-header big">
       <div class="rl"><span>WHAT</span></div>
       <div class="rl"><span>WE DELIVER</span></div>
     </div>
 
-    <!-- ROW 1 · text left / images right -->
+    <!-- ROW 1 Â· text left / images right -->
     <div class="wb-row">
       <div class="wb-text">
-        <span class="wb-num rf">01 — Retainer</span>
+        <span class="wb-num rf">01 â€” Retainer</span>
         <div class="wb-heading rf">CONTENT<br>ENGINE</div>
-        <p class="wb-desc rf">Your dedicated content machine. A monthly retainer delivering a consistent pipeline of premium video and creative assets — strategy, production, and multi-format delivery included. Revisions unlimited, deadlines guaranteed.</p>
-        <a class="wb-link rf" href="#s7">Get in touch ↗</a>
+        <p class="wb-desc rf">Your dedicated content machine. A monthly retainer delivering a consistent pipeline of premium video and creative assets â€” strategy, production, and multi-format delivery included. Revisions unlimited, deadlines guaranteed.</p>
+        <a class="wb-link rf" href="#s7">Get in touch â†—</a>
       </div>
       <div class="wb-collage rf">
         <img class="wb-img-a" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=88&auto=format&fit=crop" alt="Ads and Social">
@@ -1637,13 +1637,13 @@ footer{
       </div>
     </div>
 
-    <!-- ROW 2 · images left / text right -->
+    <!-- ROW 2 Â· images left / text right -->
     <div class="wb-row rev">
       <div class="wb-text">
-        <span class="wb-num rf">02 — Campaign</span>
+        <span class="wb-num rf">02 â€” Campaign</span>
         <div class="wb-heading rf">BRAND<br>CAMPAIGN</div>
-        <p class="wb-desc rf">One brief. Every asset. A fully produced brand campaign — hero video, cut-downs, social variants, and localized versions — delivered in 7 business days. Every format, one invoice.</p>
-        <a class="wb-link rf" href="#s7">Get in touch ↗</a>
+        <p class="wb-desc rf">One brief. Every asset. A fully produced brand campaign â€” hero video, cut-downs, social variants, and localized versions â€” delivered in 7 business days. Every format, one invoice.</p>
+        <a class="wb-link rf" href="#s7">Get in touch â†—</a>
       </div>
       <div class="wb-collage rf">
         <img class="wb-img-a" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=88&auto=format&fit=crop" alt="Brand Films">
@@ -1652,13 +1652,13 @@ footer{
       </div>
     </div>
 
-    <!-- ROW 3 · text left / images right -->
+    <!-- ROW 3 Â· text left / images right -->
     <div class="wb-row">
       <div class="wb-text">
-        <span class="wb-num rf">03 — AI</span>
+        <span class="wb-num rf">03 â€” AI</span>
         <div class="wb-heading rf">AI SPOKES-<br>PERSON</div>
-        <p class="wb-desc rf">Your brand voice. Always on. We build a custom AI avatar of your spokesperson and produce unlimited video content from it — no shoots, no scheduling, no delays. Scale without the overhead.</p>
-        <a class="wb-link rf" href="#s7">Get in touch ↗</a>
+        <p class="wb-desc rf">Your brand voice. Always on. We build a custom AI avatar of your spokesperson and produce unlimited video content from it â€” no shoots, no scheduling, no delays. Scale without the overhead.</p>
+        <a class="wb-link rf" href="#s7">Get in touch â†—</a>
       </div>
       <div class="wb-collage rf">
         <img class="wb-img-a" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=88&auto=format&fit=crop" alt="AI Avatars">
@@ -1674,11 +1674,11 @@ footer{
     <div class="big"><div class="rl"><span>OUR WORK</span></div></div>
     <div class="carousel-outer">
       <div class="carousel-track" id="reel-track">
-        <div class="reel-card active"><img class="reel-thumb" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Brand Campaign · 2026</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Global Finance Group — Q1 Brand Campaign</div></div>
-        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1536240478700-b869ad10e2f5?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">AI Content · 2025</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Enterprise SaaS — AI Spokesperson Series</div></div>
-        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Content Retainer · 2025</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Retail Platform — Monthly Content Engine</div></div>
-        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Campaign System · 2025</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Real Estate Group — Multi-Market Launch</div></div>
-        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Brand Film · 2026</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Tech Brand — Product Launch Campaign</div></div>
+        <div class="reel-card active"><img class="reel-thumb" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Brand Campaign Â· 2026</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Global Finance Group â€” Q1 Brand Campaign</div></div>
+        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1536240478700-b869ad10e2f5?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">AI Content Â· 2025</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Enterprise SaaS â€” AI Spokesperson Series</div></div>
+        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Content Retainer Â· 2025</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Retail Platform â€” Monthly Content Engine</div></div>
+        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Campaign System Â· 2025</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Real Estate Group â€” Multi-Market Launch</div></div>
+        <div class="reel-card"><img class="reel-thumb" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1280&q=88&auto=format&fit=crop" alt=""><span class="reel-card-tag">Brand Film Â· 2026</span><div class="reel-ov"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><div class="reel-tint"></div><div class="reel-card-title">Tech Brand â€” Product Launch Campaign</div></div>
       </div>
     </div>
     <div class="carousel-nav">
@@ -1689,17 +1689,17 @@ footer{
     <div class="carousel-dots" id="reel-dots"></div>
   </section>
 
-  <!-- S-TESTI: TESTIMONIALS (moved here — right after work showcase) -->
+  <!-- S-TESTI: TESTIMONIALS (moved here â€” right after work showcase) -->
   <section id="s-testi">
     <div class="big"><div class="rl"><span>WHAT CLIENTS</span></div><div class="rl"><span>ACTUALLY SAY.</span></div></div>
     <div class="testi-grid">
 
       <div class="testi-card rf">
-        <p class="testi-quote">"We went from 6-week production cycles to <strong>7 days</strong>. PRYSM didn't just save us time — they rebuilt how we think about content at scale."</p>
+        <p class="testi-quote">"We went from 6-week production cycles to <strong>7 days</strong>. PRYSM didn't just save us time â€” they rebuilt how we think about content at scale."</p>
         <div class="testi-meta">
           <span class="testi-name">Sarah Chen</span>
-          <span class="testi-role">VP Marketing — TechForward Global</span>
-          <span class="testi-result">↓ 83% production time</span>
+          <span class="testi-role">VP Marketing â€” TechForward Global</span>
+          <span class="testi-result">â†“ 83% production time</span>
         </div>
       </div>
 
@@ -1707,7 +1707,7 @@ footer{
         <p class="testi-quote">"Every format, every market, <strong>one invoice</strong>. We launched across 12 countries from a single brief. I've never seen a vendor operate like this."</p>
         <div class="testi-meta">
           <span class="testi-name">Marcus Reid</span>
-          <span class="testi-role">Head of Brand — Atlas Commerce</span>
+          <span class="testi-role">Head of Brand â€” Atlas Commerce</span>
           <span class="testi-result">12 markets, 1 brief</span>
         </div>
       </div>
@@ -1716,8 +1716,8 @@ footer{
         <p class="testi-quote">"I was skeptical about AI quality. After the first campaign, <strong>our engagement rate doubled</strong>. PRYSM is now the only content partner we use."</p>
         <div class="testi-meta">
           <span class="testi-name">Daniela Moreau</span>
-          <span class="testi-role">CMO — Fintera Group</span>
-          <span class="testi-result">↑ 2× engagement rate</span>
+          <span class="testi-role">CMO â€” Fintera Group</span>
+          <span class="testi-result">â†‘ 2Ã— engagement rate</span>
         </div>
       </div>
 
@@ -1735,10 +1735,10 @@ footer{
       <div class="s4-right">
         <div class="ey rf">Why enterprise brands choose PRYSM over agencies</div>
         <div class="adv-list">
-          <div class="adv-item rf"><span class="adv-num">01</span><div class="adv-body"><div class="adv-title">7-DAY DELIVERY — GUARANTEED</div><p class="adv-desc">Traditional agencies take 6–8 weeks. PRYSM delivers in 7 business days. Guaranteed in writing, every time.</p></div></div>
-          <div class="adv-item rf"><span class="adv-num">02</span><div class="adv-body"><div class="adv-title">EVERY FORMAT — ONE INVOICE</div><p class="adv-desc">16:9, 9:16, 1:1, 4:5 — every format, every resolution, every adaptation included. No line items for cuts.</p></div></div>
+          <div class="adv-item rf"><span class="adv-num">01</span><div class="adv-body"><div class="adv-title">7-DAY DELIVERY â€” GUARANTEED</div><p class="adv-desc">Traditional agencies take 6â€“8 weeks. PRYSM delivers in 7 business days. Guaranteed in writing, every time.</p></div></div>
+          <div class="adv-item rf"><span class="adv-num">02</span><div class="adv-body"><div class="adv-title">EVERY FORMAT â€” ONE INVOICE</div><p class="adv-desc">16:9, 9:16, 1:1, 4:5 â€” every format, every resolution, every adaptation included. No line items for cuts.</p></div></div>
           <div class="adv-item rf"><span class="adv-num">03</span><div class="adv-body"><div class="adv-title">UNLIMITED REVISIONS</div><p class="adv-desc">We iterate until you approve. No round limits, no additional charges. Your satisfaction is the only deadline.</p></div></div>
-          <div class="adv-item rf"><span class="adv-num">04</span><div class="adv-body"><div class="adv-title">MULTILINGUAL BY DEFAULT</div><p class="adv-desc">One video, multiple markets — AI-powered voiceover and localization included in every package, at no extra cost.</p></div></div>
+          <div class="adv-item rf"><span class="adv-num">04</span><div class="adv-body"><div class="adv-title">MULTILINGUAL BY DEFAULT</div><p class="adv-desc">One video, multiple markets â€” AI-powered voiceover and localization included in every package, at no extra cost.</p></div></div>
           <div class="adv-item rf"><span class="adv-num">05</span><div class="adv-body"><div class="adv-title">ENTERPRISE-GRADE OUTPUT</div><p class="adv-desc">Senior creative direction backed by purpose-built AI pipelines. We've produced campaigns for global brands across fintech, real estate, fashion, and technology. Quality is non-negotiable.</p></div></div>
         </div>
       </div>
@@ -1749,9 +1749,9 @@ footer{
   <section id="s5">
     <div class="big"><div class="rl"><span>HOW IT</span></div><div class="rl"><span>WORKS</span></div></div>
     <div class="steps">
-      <div class="step rf"><div class="step-n">01</div><div class="step-t">ALIGN</div><p class="step-d">Share your goals, audience, and brand guidelines. We extract everything needed to produce content that performs — no lengthy onboarding, no briefing decks.</p></div>
-      <div class="step rf"><div class="step-n">02</div><div class="step-t">PRODUCE</div><p class="step-d">Our AI pipeline — paired with senior creative direction — generates scripts, visuals, and motion at a pace no traditional agency can match.</p></div>
-      <div class="step rf"><div class="step-n">03</div><div class="step-t">DEPLOY</div><p class="step-d">Final assets in every format, every resolution, every platform. Ready to publish worldwide — with revisions until you approve.</p></div>
+      <div class="step rf"><div class="step-n">01</div><div class="step-t">ALIGN</div><p class="step-d">Share your goals, audience, and brand guidelines. We extract everything needed to produce content that performs â€” no lengthy onboarding, no briefing decks.</p></div>
+      <div class="step rf"><div class="step-n">02</div><div class="step-t">PRODUCE</div><p class="step-d">Our AI pipeline â€” paired with senior creative direction â€” generates scripts, visuals, and motion at a pace no traditional agency can match.</p></div>
+      <div class="step rf"><div class="step-n">03</div><div class="step-t">DEPLOY</div><p class="step-d">Final assets in every format, every resolution, every platform. Ready to publish worldwide â€” with revisions until you approve.</p></div>
     </div>
   </section>
 
@@ -1766,7 +1766,7 @@ footer{
       <div class="p-card rf">
         <span class="p-tag">AI Spokesperson</span>
         <div class="p-price">$3,500<span>/ month</span></div>
-        <p class="p-desc">Your custom AI avatar, always ready. Unlimited spokesperson videos from a single brief — no shoots, no scheduling.</p>
+        <p class="p-desc">Your custom AI avatar, always ready. Unlimited spokesperson videos from a single brief â€” no shoots, no scheduling.</p>
         <ul class="p-features">
           <li>Custom AI avatar build</li>
           <li>Unlimited video outputs</li>
@@ -1775,14 +1775,14 @@ footer{
           <li>Unlimited revisions</li>
           <li>7-day delivery guarantee</li>
         </ul>
-        <a class="p-cta" href="#s7">Get started →</a>
+        <a class="p-cta" href="#s7">Get started â†’</a>
       </div>
 
       <div class="p-card p-card--featured rf">
         <span class="p-featured-label">Most Popular</span>
         <span class="p-tag">Brand Campaign</span>
         <div class="p-price">$8,500<span>/ project</span></div>
-        <p class="p-desc">One brief. Every asset. Hero video, social cut-downs, localized variants — delivered in 7 business days. One invoice.</p>
+        <p class="p-desc">One brief. Every asset. Hero video, social cut-downs, localized variants â€” delivered in 7 business days. One invoice.</p>
         <ul class="p-features">
           <li>Full campaign production</li>
           <li>Hero + cut-downs + socials</li>
@@ -1792,22 +1792,22 @@ footer{
           <li>7-day delivery guarantee</li>
           <li>Senior creative direction</li>
         </ul>
-        <a class="p-cta" href="#s7">Get started →</a>
+        <a class="p-cta" href="#s7">Get started â†’</a>
       </div>
 
       <div class="p-card rf">
         <span class="p-tag">Content Engine</span>
         <div class="p-price">$5,000<span>/ month</span></div>
-        <p class="p-desc">Your dedicated content machine. Monthly pipeline of premium video assets — strategy, production, and delivery all included.</p>
+        <p class="p-desc">Your dedicated content machine. Monthly pipeline of premium video assets â€” strategy, production, and delivery all included.</p>
         <ul class="p-features">
-          <li>4–8 hero pieces per month</li>
+          <li>4â€“8 hero pieces per month</li>
           <li>20+ format variants</li>
           <li>Full content strategy</li>
           <li>Multilingual by default</li>
           <li>Unlimited revisions</li>
           <li>Priority 2H response</li>
         </ul>
-        <a class="p-cta" href="#s7">Get started →</a>
+        <a class="p-cta" href="#s7">Get started â†’</a>
       </div>
 
     </div>
@@ -1819,7 +1819,7 @@ footer{
           <span class="ci-k">Delivery</span>
           <span class="ci-prysm">7 days</span>
           <span class="ci-vs">vs.</span>
-          <span class="ci-agency">6–8 weeks</span>
+          <span class="ci-agency">6â€“8 weeks</span>
         </div>
         <div class="ci">
           <span class="ci-k">Revisions</span>
@@ -1850,22 +1850,22 @@ footer{
 
       <div class="faq-item">
         <div class="faq-q">How long does the first project actually take?<span class="faq-icon">+</span></div>
-        <div class="faq-a">7 business days from the moment your brief is approved. Not from when you first contact us — from brief approval. We build this guarantee into every contract.</div>
+        <div class="faq-a">7 business days from the moment your brief is approved. Not from when you first contact us â€” from brief approval. We build this guarantee into every contract.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">What if we need changes after delivery?<span class="faq-icon">+</span></div>
-        <div class="faq-a">Unlimited revisions, always included. No round limits, no additional charges. We iterate until you approve — and that's in writing in every engagement.</div>
+        <div class="faq-a">Unlimited revisions, always included. No round limits, no additional charges. We iterate until you approve â€” and that's in writing in every engagement.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">Can you handle multiple markets and languages?<span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes. AI-powered voiceover, lip-sync, and localization in any language — included in your package at no extra cost. One video, every market.</div>
+        <div class="faq-a">Yes. AI-powered voiceover, lip-sync, and localization in any language â€” included in your package at no extra cost. One video, every market.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q">What does an enterprise retainer typically cost?<span class="faq-icon">+</span></div>
-        <div class="faq-a">Our engagements start at $5,000/month. Every scope is custom — we price based on volume, formats, and markets. Book a call and we'll give you a precise number within 24 hours.</div>
+        <div class="faq-a">Our engagements start at $5,000/month. Every scope is custom â€” we price based on volume, formats, and markets. Book a call and we'll give you a precise number within 24 hours.</div>
       </div>
 
       <div class="faq-item">
@@ -1888,8 +1888,8 @@ footer{
     </div>
     <div>
       <p class="about-txt rf">PRYSM was built for one reason: <strong>enterprise brands shouldn't have to choose between quality and speed.</strong> Traditional agencies move slowly and charge extra for every revision. In-house teams burn out trying to match demand. There had to be a better model.</p>
-      <p class="about-txt rf" style="margin-top:1rem">We built it. A senior creative team backed by purpose-built AI pipelines — delivering premium video content at the speed your campaigns actually need. Every format. Every market. Unlimited revisions. Fixed scope, no surprise invoices. We work with global brands across the US, Europe, and the Middle East.</p>
-      <a href="#s7" class="about-cta rf">Request a Strategy Call →</a>
+      <p class="about-txt rf" style="margin-top:1rem">We built it. A senior creative team backed by purpose-built AI pipelines â€” delivering premium video content at the speed your campaigns actually need. Every format. Every market. Unlimited revisions. Fixed scope, no surprise invoices. We work with global brands across the US, Europe, and the Middle East.</p>
+      <a href="#s7" class="about-cta rf">Request a Strategy Call â†’</a>
     </div>
   </section>
 
@@ -1897,22 +1897,22 @@ footer{
   <section id="s7">
     <div class="urgency-badge rf"><span class="urgency-dot"></span>Currently accepting 4 new enterprise clients for Q3 2026</div>
     <div class="big"><div class="rl"><span>READY TO</span></div><div class="rl"><span>MOVE</span></div><div class="rl"><span>FASTER?</span></div></div>
-    <p class="contact-sub rf">Tell us what you're building. We'll show you exactly how PRYSM can accelerate your content output — no commitment, no pitch decks.</p>
+    <p class="contact-sub rf">Tell us what you're building. We'll show you exactly how PRYSM can accelerate your content output â€” no commitment, no pitch decks.</p>
     <div class="contact-box rf">
-      <form onsubmit="this.querySelector('.sbtn').textContent='Sent ✓';return false;">
+      <form onsubmit="this.querySelector('.sbtn').textContent='Sent âœ“';return false;">
         <div class="fr"><input type="text" placeholder="Your name"></div>
         <div class="fr"><input type="email" placeholder="Email address"></div>
         <div class="fr"><input type="text" placeholder="Company"></div>
-        <div class="fr"><textarea placeholder="Tell us about your project…"></textarea></div>
+        <div class="fr"><textarea placeholder="Tell us about your projectâ€¦"></textarea></div>
         <button class="sbtn" type="submit">Request a Strategy Call</button>
       </form>
-      <a href="#s7" class="cal-link">Or pick a time directly on our calendar →</a>
+      <a href="#s7" class="cal-link">Or pick a time directly on our calendar â†’</a>
     </div>
   </section>
 
   <footer>
     <span class="fl">PRYSM</span>
-    <span class="fc">© 2026 PRYSM — All rights reserved</span>
+    <span class="fc">Â© 2026 PRYSM â€” All rights reserved</span>
   </footer>
 
 </div><!-- /content -->
@@ -1933,7 +1933,7 @@ window.scrollTo(0, 0);
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─── CURSOR ─── */
+/* â”€â”€â”€ CURSOR â”€â”€â”€ */
 const cd=document.getElementById('cd'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
 window.addEventListener('mousemove',e=>{
@@ -1950,7 +1950,7 @@ document.querySelectorAll('a,button,.pbtn,.svc,.step,.sdot').forEach(el=>{
   el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
 });
 
-/* ─── LENIS SMOOTH SCROLL ─── */
+/* â”€â”€â”€ LENIS SMOOTH SCROLL â”€â”€â”€ */
 const lenis = new Lenis({
   duration: 1.35,
   easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -1963,18 +1963,18 @@ lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(time => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
-/* ─── PROGRESS BAR ─── */
+/* â”€â”€â”€ PROGRESS BAR â”€â”€â”€ */
 const prog = document.getElementById('progress');
 lenis.on('scroll', ({progress}) => { prog.style.width = (progress * 100) + '%'; });
 
-/* ─── SCROLL CUE ─── */
+/* â”€â”€â”€ SCROLL CUE â”€â”€â”€ */
 const cue = document.getElementById('cue');
 lenis.on('scroll', ({scroll}) => {
   if(scroll > 80) cue.classList.add('gone');
   else cue.classList.remove('gone');
 });
 
-/* ─── SIDE DOTS ─── */
+/* â”€â”€â”€ SIDE DOTS â”€â”€â”€ */
 const sdots = document.querySelectorAll('.sdot');
 const sections = ['s0','s2','s3','s4','s5','s-pricing','s6','s7'];
 sections.forEach((id, i) => {
@@ -1993,18 +1993,18 @@ sdots.forEach((d,i) => {
   });
 });
 
-/* ─── NAV SMOOTH SCROLL (nav-link removed — handled by menu overlay) ─── */
+/* â”€â”€â”€ NAV SMOOTH SCROLL (nav-link removed â€” handled by menu overlay) â”€â”€â”€ */
 document.querySelector('.about-cta')?.addEventListener('click', e => {
   e.preventDefault();
   lenis.scrollTo(document.getElementById('s7'), { duration: 1.6 });
 });
 
-/* ─── GOOEY STATS ─── */
+/* â”€â”€â”€ GOOEY STATS â”€â”€â”€ */
 (function initGooey() {
   const STATS = [
     { num: '7',    lbl: 'Business Days to First Delivery' },
     { num: '20+',  lbl: 'Formats Delivered Per Project' },
-    { num: '∞',    lbl: 'Revision Rounds — Always Included' },
+    { num: 'âˆž',    lbl: 'Revision Rounds â€” Always Included' },
   ];
   const MORPH_TIME = 1.2, COOLDOWN_TIME = 2.2;
   const t1El = document.getElementById('gooey-t1');
@@ -2033,7 +2033,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   tick();
 })();
 
-/* ─── SCROLL REVEALS: stats-bar and pricing ─── */
+/* â”€â”€â”€ SCROLL REVEALS: stats-bar and pricing â”€â”€â”€ */
 (function initExtraReveals() {
   // Stats bar items
   document.querySelectorAll('.sb-item').forEach((el, i) => {
@@ -2055,14 +2055,14 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   });
 })();
 
-/* ─── HERO VIDEO: seamless loop + parallax ─── */
+/* â”€â”€â”€ HERO VIDEO: seamless loop + parallax â”€â”€â”€ */
 (function initHeroVideo() {
   const vid  = document.getElementById('hero-vid-a');
   const wrap = document.getElementById('hero-vid-wrap');
   const flowSection = document.getElementById('flow-section');
   if (!vid || !wrap) return;
 
-  /* ── ensure autoplay starts (handle readyState race) ── */
+  /* â”€â”€ ensure autoplay starts (handle readyState race) â”€â”€ */
   if (vid.readyState >= 3) {
     vid.play().catch(() => {});
   } else {
@@ -2072,7 +2072,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   /* parallax removed */
 })();
 
-/* ─── PRISM FLUX LOADER ─── */
+/* â”€â”€â”€ PRISM FLUX LOADER â”€â”€â”€ */
 (function initPrismLoader() {
   const PLUS = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`;
   const FACES = [
@@ -2133,7 +2133,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   }, 600);
 })();
 
-/* ─── REEL TILT ─── */
+/* â”€â”€â”€ REEL TILT â”€â”€â”€ */
 (function initTilt() {
   document.querySelectorAll('.reel-card').forEach(card => {
     card.style.transformStyle = 'preserve-3d';
@@ -2146,7 +2146,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   });
 })();
 
-/* ─── CAROUSEL ─── */
+/* â”€â”€â”€ CAROUSEL â”€â”€â”€ */
 (function initCarousel() {
   const track=document.getElementById('reel-track'), cards=Array.from(track.querySelectorAll('.reel-card')), tints=cards.map(c=>c.querySelector('.reel-tint'));
   const prevBtn=document.getElementById('reel-prev'), nextBtn=document.getElementById('reel-next'), curEl=document.getElementById('reel-cur'), totEl=document.getElementById('reel-tot'), dotsWrap=document.getElementById('reel-dots');
@@ -2170,7 +2170,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   window.addEventListener('resize',()=>goTo(current,true),{passive:true});
 })();
 
-/* ─── FLOW TRANSITION: splash ↔ hero ─── */
+/* â”€â”€â”€ FLOW TRANSITION: splash â†” hero â”€â”€â”€ */
 (function initFlowTransition() {
   const flowSection = document.getElementById('flow-section');
   const splash      = document.getElementById('splash');
@@ -2201,7 +2201,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
 
   if (!flowSection || !heroInner) return;
 
-  /* ── FORWARD: splash → hero ── */
+  /* â”€â”€ FORWARD: splash â†’ hero â”€â”€ */
   function revealHero() {
     if (revealed || animating) return;
     revealed  = true;
@@ -2218,7 +2218,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
         /* Park 2px before the sticky-release boundary so the very
            first scroll tick immediately takes user to next section.
            Skip the snap if user already scrolled past this point
-           during the animation — otherwise they'd be thrown back. */
+           during the animation â€” otherwise they'd be thrown back. */
         const parkY = Math.max(0, flowSection.offsetHeight - window.innerHeight - 2);
         if (window.scrollY < parkY) {
           lenis.scrollTo(parkY, { immediate:true });
@@ -2230,7 +2230,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
     });
   }
 
-  /* ── REVERSE: hero → splash ── */
+  /* â”€â”€ REVERSE: hero â†’ splash â”€â”€ */
   function hideHero() {
     if (!revealed || animating) return;
     revealed  = false;
@@ -2254,7 +2254,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
     });
   }
 
-  /* Expose globally — Home nav goes to hero page, not splash */
+  /* Expose globally â€” Home nav goes to hero page, not splash */
   window.__heroHome = function goHome() {
     if (!revealed) {
       revealHero();
@@ -2263,7 +2263,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
     }
   };
 
-  /* Forward trigger — first downward input from splash */
+  /* Forward trigger â€” first downward input from splash */
   function onWheel(e) {
     if (armed && !revealed && e.deltaY > 0 && window.scrollY < 60) {
       armed = false; revealHero();
@@ -2277,7 +2277,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   window.addEventListener('wheel',     onWheel, { passive:true });
   window.addEventListener('touchmove', onTouch, { passive:true });
 
-  /* Reverse trigger — user scrolled all the way back up to the splash */
+  /* Reverse trigger â€” user scrolled all the way back up to the splash */
   lenis.on('scroll', ({ scroll }) => {
     if (revealed && !animating && scroll < 55) hideHero();
   });
@@ -2291,7 +2291,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   });
 })();
 
-/* ─── SCROLL REVEALS ─── */
+/* â”€â”€â”€ SCROLL REVEALS â”€â”€â”€ */
 document.querySelectorAll('#s2 .rl span, #s3 .rl span, #s4 .rl span, #s5 .rl span, #s6 .rl span, #s7 .rl span').forEach(span => {
   gsap.set(span, { y:'115%' });
   ScrollTrigger.create({ trigger: span.closest('.rl'), start: 'top 88%', once: true, onEnter: () => gsap.to(span, { y:'0%', duration:.9, ease:'power4.out' }) });
@@ -2309,7 +2309,7 @@ document.querySelectorAll('.step').forEach((s,i) => {
   ScrollTrigger.create({ trigger: s, start: 'top 90%', once: true, onEnter: () => gsap.to(s, { opacity:1, y:0, duration:.75, delay:i*.1, ease:'power3.out' }) });
 });
 
-/* ─── TESTIMONIALS REVEAL ─── */
+/* â”€â”€â”€ TESTIMONIALS REVEAL â”€â”€â”€ */
 document.querySelectorAll('#s-testi .rl span').forEach(span => {
   gsap.set(span, { y:'115%' });
   ScrollTrigger.create({ trigger: span.closest('.rl'), start: 'top 88%', once: true, onEnter: () => gsap.to(span, { y:'0%', duration:.9, ease:'power4.out' }) });
@@ -2319,7 +2319,7 @@ document.querySelectorAll('.testi-card').forEach((c,i) => {
   ScrollTrigger.create({ trigger: c, start: 'top 90%', once: true, onEnter: () => gsap.to(c, { opacity:1, y:0, duration:.8, delay:i*.12, ease:'power3.out' }) });
 });
 
-/* ─── FAQ REVEAL + ACCORDION ─── */
+/* â”€â”€â”€ FAQ REVEAL + ACCORDION â”€â”€â”€ */
 document.querySelectorAll('#s-faq .rl span').forEach(span => {
   gsap.set(span, { y:'115%' });
   ScrollTrigger.create({ trigger: span.closest('.rl'), start: 'top 88%', once: true, onEnter: () => gsap.to(span, { y:'0%', duration:.9, ease:'power4.out' }) });
@@ -2334,13 +2334,13 @@ document.querySelectorAll('.faq-item').forEach((item,i) => {
   });
 });
 
-/* ─── NAV CTA cursor hover ─── */
+/* â”€â”€â”€ NAV CTA cursor hover â”€â”€â”€ */
 document.querySelectorAll('.nav-cta-btn').forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('hov'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('hov'));
 });
 
-/* ─── HAMBURGER MENU ─── */
+/* â”€â”€â”€ HAMBURGER MENU â”€â”€â”€ */
 (function initMenu() {
   const btn   = document.getElementById('menu-btn');
   const panel = document.getElementById('menu-overlay');
@@ -2365,7 +2365,7 @@ document.querySelectorAll('.nav-cta-btn').forEach(el => {
   /* Escape key to close */
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-  /* Menu link clicks — smooth scroll then close */
+  /* Menu link clicks â€” smooth scroll then close */
   links.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -2451,7 +2451,7 @@ void main(){
   const uRes   = gl.getUniformLocation(program, 'resolution');
   const uColor = gl.getUniformLocation(program, 'u_color');
 
-  /* charcoal with a faint cyan bias — matches PRYSM palette */
+  /* charcoal with a faint cyan bias â€” matches PRYSM palette */
   const smokeColor = [0.04, 0.07, 0.08];
 
   function resize() {
