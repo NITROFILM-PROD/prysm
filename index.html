@@ -2206,6 +2206,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   /* ── FORWARD: splash → hero ── */
   function revealHero() {
     if (revealed || animating) return;
+    document.body.classList.remove('menu-open'); /* close menu on transition */
     revealed  = true;
     animating = true;
     splashActive = false;
@@ -2235,6 +2236,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
   /* ── REVERSE: hero → splash ── */
   function hideHero() {
     if (!revealed || animating) return;
+    document.body.classList.remove('menu-open'); /* close menu on transition */
     revealed  = false;
     animating = true;
 
