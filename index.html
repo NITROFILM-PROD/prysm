@@ -97,7 +97,7 @@ body.hov #cr{width:54px;height:54px;border-color:rgba(255,255,255,.65)}
 /* ═══════════════════════════════
    NAV
 ═══════════════════════════════ */
-nav{
+#main-nav{
   position:fixed;top:1.6rem;left:2rem;right:2rem;
   z-index:100;
   display:flex;flex-direction:row;align-items:center;justify-content:space-between;
@@ -163,7 +163,7 @@ body.menu-open #menu-overlay{
   pointer-events:all;
 }
 /* Nav — flatten bottom-right corner when dropdown is attached */
-body.menu-open nav{
+body.menu-open #main-nav{
   border-bottom-right-radius:0;
   border-bottom-left-radius:14px;
 }
@@ -2191,7 +2191,7 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
 
   gsap.set('#s0 .rf', { opacity:1, y:0 });
   gsap.set('#side-dots', { opacity:0 });
-  gsap.set('nav', { opacity:0, y:-14, pointerEvents:'none' });
+  gsap.set('#main-nav', { opacity:0, y:-14, pointerEvents:'none' });
   if (heroInner) gsap.set(heroInner, { yPercent:100, filter:'blur(10px)' });
 
   /* Logo entry + parallax */
@@ -2241,8 +2241,8 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
         if (window.scrollY < parkY) {
           lenis.scrollTo(parkY, { immediate:true });
         }
-        gsap.to('nav', { opacity:1, y:0, duration:.65, ease:'power3.out',
-          onComplete: () => gsap.set('nav', { pointerEvents:'auto' }) });
+        gsap.to('#main-nav', { opacity:1, y:0, duration:.65, ease:'power3.out',
+          onComplete: () => gsap.set('#main-nav', { pointerEvents:'auto' }) });
         gsap.to('#side-dots', { opacity:1, duration:.7, ease:'power3.out' });
       }
     });
@@ -2255,8 +2255,8 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
     revealed  = false;
     animating = true;
 
-    gsap.to('nav', { opacity:0, y:-14, duration:0.3, ease:'power2.in',
-      onComplete: () => gsap.set('nav', { pointerEvents:'none' }) });
+    gsap.to('#main-nav', { opacity:0, y:-14, duration:0.3, ease:'power2.in',
+      onComplete: () => gsap.set('#main-nav', { pointerEvents:'none' }) });
     gsap.to('#side-dots', { opacity:0, duration:0.2 });
 
     gsap.to(heroInner, {
