@@ -2203,17 +2203,13 @@ document.querySelector('.about-cta')?.addEventListener('click', e => {
 
   if (!flowSection || !heroInner) return;
 
-  /* close menu instantly (no CSS transition) before any page transition */
+  /* close menu instantly — display:none guarantees zero artifacts */
   function snapCloseMenu() {
+    document.body.classList.remove('menu-open');
     const panel = document.getElementById('menu-overlay');
     const scrim = document.getElementById('menu-scrim');
-    if (panel) panel.style.transition = 'none';
-    if (scrim) scrim.style.transition = 'none';
-    document.body.classList.remove('menu-open');
-    requestAnimationFrame(() => {
-      if (panel) panel.style.transition = '';
-      if (scrim) scrim.style.transition = '';
-    });
+    if (panel) { panel.style.transition = 'none'; panel.style.display = 'none'; }
+    if (scrim) { scrim.style.pointerEvents = 'none'; }
   }
 
   /* ── FORWARD: splash → hero ── */
@@ -2365,6 +2361,8 @@ document.querySelectorAll('.nav-cta-btn').forEach(el => {
   const links = document.querySelectorAll('.menu-link');
 
   function openMenu() {
+    /* restore display if snapCloseMenu hid it */
+    if (panel) { panel.style.display = ''; panel.style.transition = ''; }
     document.body.classList.add('menu-open');
   }
 
