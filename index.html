@@ -138,28 +138,34 @@ body.menu-open #menu-btn span:nth-child(3){transform:translateY(-6.5px) rotate(-
 }
 body.menu-open #menu-scrim{ pointer-events:all; }
 
-/* ── Dropdown popup — top-right, same glass as nav ── */
+/* ── Dropdown — extends from nav bar as one seamless body ── */
 #menu-overlay{
   position:fixed;
-  top:5rem;          /* just below the nav bar */
   right:2rem;        /* aligned with nav right edge */
   z-index:99;
   width:220px;
-  background:rgba(10,10,10,.42);
+  /* same glass recipe as nav but fully opaque — readable on any bg */
+  background:rgba(10,10,10,.96);
   backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;
-  padding:.6rem .5rem;
+  border-top:none;   /* nav bottom = dropdown top — no double border */
+  border-radius:0 0 14px 14px;
+  padding:.5rem .5rem .7rem;
   transform-origin:top right;
-  transform:scale(.88) translateY(-6px);
+  transform:scaleY(0);
   opacity:0;
   pointer-events:none;
-  transition:transform .35s var(--e), opacity .28s var(--e);
+  transition:transform .32s var(--e), opacity .25s var(--e);
 }
 body.menu-open #menu-overlay{
-  transform:scale(1) translateY(0);
+  transform:scaleY(1);
   opacity:1;
   pointer-events:all;
+}
+/* Nav — flatten bottom-right corner when dropdown is attached */
+body.menu-open nav{
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:14px;
 }
 #menu-nav{
   display:flex;flex-direction:column;gap:0;
@@ -2362,7 +2368,13 @@ document.querySelectorAll('.nav-cta-btn').forEach(el => {
 
   function openMenu() {
     /* restore display if snapCloseMenu hid it */
-    if (panel) { panel.style.display = ''; panel.style.transition = ''; }
+    if (panel) {
+      panel.style.display = '';
+      panel.style.transition = '';
+      /* pin dropdown exactly to nav bottom */
+      const navEl = document.querySelector('nav');
+      if (navEl) panel.style.top = navEl.getBoundingClientRect().bottom + 'px';
+    }
     document.body.classList.add('menu-open');
   }
 
