@@ -148,8 +148,7 @@ body.menu-open #menu-scrim{ pointer-events:all; }
   background:rgba(10,10,10,.38);
   backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
   border:1px solid rgba(255,255,255,.1);
-  border-top:none;
-  border-radius:0 0 14px 14px;
+  border-radius:14px;
   padding:.5rem .5rem .7rem;
   transform-origin:top right;
   transform:scaleY(0);
@@ -163,10 +162,7 @@ body.menu-open #menu-overlay{
   pointer-events:all;
 }
 /* Nav — flatten bottom-right corner when dropdown is attached */
-body.menu-open #main-nav{
-  border-bottom-right-radius:0;
-  border-bottom-left-radius:14px;
-}
+/* nav keeps full radius — gap separates it from dropdown */
 #menu-nav{
   display:flex;flex-direction:column;gap:0;
 }
@@ -2373,7 +2369,7 @@ document.querySelectorAll('.nav-cta-btn').forEach(el => {
       panel.style.transition = '';
       /* pin dropdown exactly to nav bottom */
       const navEl = document.querySelector('nav');
-      if (navEl) panel.style.top = navEl.getBoundingClientRect().bottom + 'px';
+      if (navEl) panel.style.top = (navEl.getBoundingClientRect().bottom + 8) + 'px';
     }
     document.body.classList.add('menu-open');
   }
